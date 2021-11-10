@@ -23,6 +23,7 @@ const Forecasts = ( { data } ) => {
 
     setForecasts(forecastsData)
   }, [data])
+  console.log(forecasts);
   return (
     <ScrollView
       horizontal
@@ -30,7 +31,7 @@ const Forecasts = ( { data } ) => {
       style={styles.scroll}
     >
     {forecasts.map(f => (
-      <View>
+      <View key={f.date} >
         <Text>{f.name}</Text>
         <Weather data={f} />
       </View>
